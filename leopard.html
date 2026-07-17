@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leopard Office Locator — Parcelo</title>
+<meta name="description" content="Find your nearest Leopard office across Pakistan. Search by city, area or office name.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="brand">
+    <span class="brand-mark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="7" width="15" height="10" rx="1"/><path d="M16 10h3l3 3v4h-6z"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="19" r="2"/></svg>
+    </span>
+    Parcelo
+  </a>
+  <nav class="main-nav">
+    <a href="#">Track</a>
+    <a href="index.html" class="active">Locate Office</a>
+    <a href="#">Services</a>
+    <a href="#">Support</a>
+  </nav>
+  <div class="header-right">
+    <button class="book-pickup">Book Pickup
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </button>
+  </div>
+</header>
+
+<section class="hero">
+  <span class="hero-badge">
+    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="7" width="15" height="10" rx="1"/><path d="M16 10h3l3 3v4h-6z"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="19" r="2"/></svg>
+    742+ offices across Pakistan
+  </span>
+  <h1>Find Your Nearest <span class="underline">Leopard Office</span></h1>
+  <p class="sub">Search Leopard-operated offices across Pakistan in seconds — by city, area or office name.</p>
+
+  <div class="search-shell">
+    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input id="searchInput" type="text" placeholder="Search by city, area or office name...">
+    <button class="mic-btn" aria-label="Voice search">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/></svg>
+    </button>
+    <button class="search-btn" id="searchBtn">Search</button>
+  </div>
+
+  <div class="try-row">
+    <span>Try:</span>
+    <span class="try-chip" data-query="Karachi">Karachi</span>
+    <span class="try-chip" data-query="Gulberg">Gulberg</span>
+    <span class="try-chip" data-query="DHA">DHA</span>
+    <span class="try-chip" data-query="F-7">F-7</span>
+  </div>
+</section>
+
+<div class="category-bar">
+  <a class="cat-tab" href="index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20Z"/></svg>
+    All Offices
+  </a>
+  <a class="cat-tab" href="self-collection.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12"/></svg>
+    Self Collection
+  </a>
+  <a class="cat-tab" href="nadra.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg>
+    NADRA
+  </a>
+  <a class="cat-tab active" href="leopard.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg>
+    Leopard Office
+  </a>
+  <a class="cat-tab" href="index.html#regional-hub">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h1m4 0h1m-6 4h1m4 0h1m-6 4h1m4 0h1"/></svg>
+    Regional Hubs
+  </a>
+  <a class="cat-tab" href="index.html#express-center">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></svg>
+    Express Centers
+  </a>
+</div>
+
+<div class="results-shell">
+  <aside class="sidebar">
+    <h3>
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+      Quick filters
+    </h3>
+
+    <div class="filter-group">
+      <div class="filter-label">Province</div>
+      <div class="chip-group">
+        <button class="chip-btn active" data-province="All">All</button>
+        <button class="chip-btn" data-province="Sindh">Sindh</button>
+        <button class="chip-btn" data-province="Punjab">Punjab</button>
+        <button class="chip-btn" data-province="ICT">ICT</button>
+        <button class="chip-btn" data-province="KPK">KPK</button>
+      </div>
+    </div>
+
+    <div class="toggle-row">
+      <span>Open now</span>
+      <button class="switch" id="openNowSwitch" aria-label="Toggle open now"></button>
+    </div>
+    <div class="toggle-row">
+      <span>24 hours</span>
+      <button class="switch" id="hrs24Switch" aria-label="Toggle 24 hours"></button>
+    </div>
+
+    <div class="help-box">
+      <strong>Need help?</strong>
+      Our team is available 24/7.
+      <span class="phone">+92 21 111 786 111</span>
+    </div>
+  </aside>
+
+  <main>
+    <div class="results-heading">
+      <h2 id="resultsCount">Loading offices…</h2>
+      <span class="updated">Updated just now</span>
+    </div>
+    <div class="offices-grid" id="officesGrid"></div>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <span>© 2026 Parcelo. All rights reserved.</span>
+  <div class="footer-links">
+    <a href="index.html">All Offices</a>
+    <a href="nadra.html">NADRA</a>
+    <a href="self-collection.html">Self Collection</a>
+    <a href="leopard.html">Leopard Office</a>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script>window.PAGE_CATEGORY = "leopard";</script>
+<script src="js/app.js"></script>
+</body>
+</html>

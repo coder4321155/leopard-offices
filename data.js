@@ -1,0 +1,258 @@
+/* ===========================================================
+   Parcelo — shared office dataset
+   Every page (leopard.html, nadra.html, self-collection.html)
+   reads from this single source, so counts, search and filters
+   stay consistent across the whole site.
+   =========================================================== */
+
+const OFFICES = [
+  {
+    id: "khi-central-hub",
+    name: "Karachi Central Hub",
+    category: "regional-hub",
+    badgeLabel: "Regional Hub",
+    city: "Karachi, Sindh",
+    province: "Sindh",
+    address: "Plot 45, Shahrah-e-Faisal, Block 6, PECHS, Karachi",
+    phone: "+92 21 111 786 111",
+    hours: "24 Hours",
+    is24: true,
+    openNow: true,
+    tags: ["Pickup", "Drop-off"]
+  },
+  {
+    id: "khi-clifton-express",
+    name: "Clifton Express Centre",
+    category: "express-center",
+    badgeLabel: "Express Center",
+    city: "Karachi, Sindh",
+    province: "Sindh",
+    address: "Shop 12, Block 2, Clifton, Karachi",
+    phone: "+92 21 3583 1200",
+    hours: "9:00 AM – 10:00 PM",
+    is24: false,
+    openNow: true,
+    tags: ["Open now", "Pickup", "Drop-off"]
+  },
+  {
+    id: "khi-gulshan-nadra",
+    name: "Gulshan NADRA Office",
+    category: "nadra",
+    badgeLabel: "NADRA",
+    city: "Karachi, Sindh",
+    province: "Sindh",
+    address: "Rashid Minhas Road, Gulshan-e-Iqbal, Karachi",
+    phone: "+92 21 3481 9000",
+    hours: "9:00 AM – 6:00 PM",
+    is24: false,
+    openNow: true,
+    tags: ["NADRA Verification", "Drop-off"]
+  },
+  {
+    id: "khi-defence-leopard",
+    name: "Defence Leopard Office",
+    category: "leopard",
+    badgeLabel: "Leopard Office",
+    city: "Karachi, Sindh",
+    province: "Sindh",
+    address: "Khayaban-e-Ittehad, Phase 6, DHA, Karachi",
+    phone: "+92 21 3520 4477",
+    hours: "9:00 AM – 9:00 PM",
+    is24: false,
+    openNow: true,
+    tags: ["Pickup", "Drop-off"]
+  },
+  {
+    id: "khi-saddar-self",
+    name: "Saddar Self Collection Point",
+    category: "self-collection",
+    badgeLabel: "Self Collection",
+    city: "Karachi, Sindh",
+    province: "Sindh",
+    address: "Preedy Street, Saddar, Karachi",
+    phone: "+92 21 3271 5090",
+    hours: "10:00 AM – 8:00 PM",
+    is24: false,
+    openNow: true,
+    tags: ["Self Collection"]
+  },
+  {
+    id: "lhr-gulberg-leopard",
+    name: "Gulberg Leopard Office",
+    category: "leopard",
+    badgeLabel: "Leopard Office",
+    city: "Lahore, Punjab",
+    province: "Punjab",
+    address: "MM Alam Road, Gulberg III, Lahore",
+    phone: "+92 42 3575 8811",
+    hours: "9:00 AM – 9:00 PM",
+    is24: false,
+    openNow: true,
+    tags: ["Pickup", "Drop-off"]
+  },
+  {
+    id: "lhr-johar-nadra",
+    name: "Johar Town NADRA Office",
+    category: "nadra",
+    badgeLabel: "NADRA",
+    city: "Lahore, Punjab",
+    province: "Punjab",
+    address: "Khayaban-e-Jinnah, Johar Town, Lahore",
+    phone: "+92 42 3530 2210",
+    hours: "9:00 AM – 6:00 PM",
+    is24: false,
+    openNow: false,
+    tags: ["NADRA Verification"]
+  },
+  {
+    id: "lhr-model-town-self",
+    name: "Model Town Self Collection",
+    category: "self-collection",
+    badgeLabel: "Self Collection",
+    city: "Lahore, Punjab",
+    province: "Punjab",
+    address: "Block C, Model Town, Lahore",
+    phone: "+92 42 3589 4432",
+    hours: "10:00 AM – 8:00 PM",
+    is24: false,
+    openNow: true,
+    tags: ["Self Collection"]
+  },
+  {
+    id: "lhr-regional-hub",
+    name: "Lahore Regional Hub",
+    category: "regional-hub",
+    badgeLabel: "Regional Hub",
+    city: "Lahore, Punjab",
+    province: "Punjab",
+    address: "1-Km Ferozepur Road, Lahore",
+    phone: "+92 42 111 786 111",
+    hours: "24 Hours",
+    is24: true,
+    openNow: true,
+    tags: ["Pickup", "Drop-off"]
+  },
+  {
+    id: "isb-f7-leopard",
+    name: "F-7 Leopard Office",
+    category: "leopard",
+    badgeLabel: "Leopard Office",
+    city: "Islamabad, ICT",
+    province: "ICT",
+    address: "Jinnah Super Market, F-7, Islamabad",
+    phone: "+92 51 265 1190",
+    hours: "9:00 AM – 9:00 PM",
+    is24: false,
+    openNow: true,
+    tags: ["Pickup", "Drop-off"]
+  },
+  {
+    id: "isb-blue-area-nadra",
+    name: "Blue Area NADRA Office",
+    category: "nadra",
+    badgeLabel: "NADRA",
+    city: "Islamabad, ICT",
+    province: "ICT",
+    address: "Jinnah Avenue, Blue Area, Islamabad",
+    phone: "+92 51 111 786 100",
+    hours: "9:00 AM – 6:00 PM",
+    is24: false,
+    openNow: true,
+    tags: ["NADRA Verification", "Drop-off"]
+  },
+  {
+    id: "isb-express-center",
+    name: "Blue Area Express Center",
+    category: "express-center",
+    badgeLabel: "Express Center",
+    city: "Islamabad, ICT",
+    province: "ICT",
+    address: "Fazl-e-Haq Road, Blue Area, Islamabad",
+    phone: "+92 51 282 4410",
+    hours: "9:00 AM – 10:00 PM",
+    is24: false,
+    openNow: true,
+    tags: ["Open now", "Pickup"]
+  },
+  {
+    id: "pes-self-collection",
+    name: "University Road Self Collection",
+    category: "self-collection",
+    badgeLabel: "Self Collection",
+    city: "Peshawar, KPK",
+    province: "KPK",
+    address: "University Road, Peshawar",
+    phone: "+92 91 570 3312",
+    hours: "10:00 AM – 8:00 PM",
+    is24: false,
+    openNow: true,
+    tags: ["Self Collection"]
+  },
+  {
+    id: "pes-leopard-office",
+    name: "Hayatabad Leopard Office",
+    category: "leopard",
+    badgeLabel: "Leopard Office",
+    city: "Peshawar, KPK",
+    province: "KPK",
+    address: "Phase 3, Hayatabad, Peshawar",
+    phone: "+92 91 581 7723",
+    hours: "9:00 AM – 9:00 PM",
+    is24: false,
+    openNow: false,
+    tags: ["Pickup", "Drop-off"]
+  },
+  {
+    id: "khi-nadra-2",
+    name: "Korangi NADRA Office",
+    category: "nadra",
+    badgeLabel: "NADRA",
+    city: "Karachi, Sindh",
+    province: "Sindh",
+    address: "Korangi Industrial Area, Karachi",
+    phone: "+92 21 3511 6620",
+    hours: "9:00 AM – 6:00 PM",
+    is24: false,
+    openNow: true,
+    tags: ["NADRA Verification"]
+  },
+  {
+    id: "lhr-leopard-2",
+    name: "DHA Leopard Office",
+    category: "leopard",
+    badgeLabel: "Leopard Office",
+    city: "Lahore, Punjab",
+    province: "Punjab",
+    address: "Phase 4, DHA, Lahore",
+    phone: "+92 42 3742 9981",
+    hours: "9:00 AM – 9:00 PM",
+    is24: false,
+    openNow: true,
+    tags: ["Pickup", "Drop-off"]
+  },
+  {
+    id: "khi-self-2",
+    name: "North Nazimabad Self Collection",
+    category: "self-collection",
+    badgeLabel: "Self Collection",
+    city: "Karachi, Sindh",
+    province: "Sindh",
+    address: "Block H, North Nazimabad, Karachi",
+    phone: "+92 21 3663 9021",
+    hours: "10:00 AM – 8:00 PM",
+    is24: true,
+    openNow: true,
+    tags: ["Self Collection", "24 Hours"]
+  }
+];
+
+/* Category → page map, used to build cross-links between the
+   three connected pages and the quick-filter tabs on each. */
+const CATEGORY_PAGES = {
+  "all": { label: "All Offices", href: "index.html" },
+  "leopard": { label: "Leopard Office", href: "leopard.html" },
+  "nadra": { label: "NADRA", href: "nadra.html" },
+  "self-collection": { label: "Self Collection", href: "self-collection.html" },
+  "regional-hub": { label: "Regional Hubs", href: "index.html#regional-hub" },
+  "express-center": { label: "Express Centers", href: "index.html#express-center" }
+};
